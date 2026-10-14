@@ -3,6 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { KodiakLogo } from './KodiakLogo';
 import { ThemeSwitcher } from './ThemeSwitcher';
+import { ThemeToggle } from './ThemeToggle';
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -68,21 +69,23 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* Desktop Theme Switcher */}
-          <div className="hidden md:flex items-center">
+          {/* Desktop Controls: Theme Switcher & Light/Dark Mode Toggle */}
+          <div className="hidden md:flex items-center gap-2">
             <ThemeSwitcher />
+            <ThemeToggle />
           </div>
 
-          {/* Mobile Right Controls: Theme Switcher + Menu Button */}
-          <div className="flex md:hidden items-center gap-2">
+          {/* Mobile Right Controls */}
+          <div className="flex md:hidden items-center gap-1.5">
+            <ThemeToggle />
             <ThemeSwitcher compact={true} />
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl text-navy-800 bg-sage-300/50 hover:bg-sage-300 transition-colors focus:outline-none"
+              className="p-2 rounded-xl text-navy-800 bg-sage-300/50 hover:bg-sage-300 transition-colors focus:outline-none"
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
@@ -90,8 +93,8 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden glass-card border-b border-sage-300 shadow-xl px-4 pt-3 pb-6 mt-3 animate-fade-in">
-          <nav className="flex flex-col space-y-2">
+        <div className="md:hidden glass-card border-b border-sage-300 shadow-xl px-4 pt-3 pb-6 mt-3 animate-fade-in space-y-3">
+          <nav className="flex flex-col space-y-1.5">
             {navItems.map((item) => (
               <NavLink
                 key={item.name}

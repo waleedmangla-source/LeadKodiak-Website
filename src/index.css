@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* =========================================================================
-   THEME DEFINITIONS & DYNAMIC CSS VARIABLES
+   LIGHT THEME DEFINITIONS (DEFAULT)
    ========================================================================= */
 
 :root,
@@ -205,6 +205,198 @@
 }
 
 /* =========================================================================
+   DARK THEME VARIATIONS
+   ========================================================================= */
+
+[data-mode="dark"],
+[data-mode="dark"][data-theme="kodiak-classic"] {
+  --color-navy-900: 246 242 232;
+  --color-navy-800: 210 216 222;
+  --color-navy-700: 165 175 185;
+
+  --color-cream-100: 6 18 32;
+  --color-cream-200: 10 28 48;
+
+  --color-sage-300: 45 72 100;
+  --color-sage-400: 75 105 135;
+  --color-sage-500: 110 140 170;
+
+  --color-cognac-400: 205 145 100;
+  --color-cognac-500: 185 125 80;
+  --color-cognac-600: 155 100 60;
+}
+
+[data-mode="dark"][data-theme="crimson-slate"] {
+  --color-navy-900: 248 244 235;
+  --color-navy-800: 215 210 200;
+  --color-navy-700: 175 170 160;
+
+  --color-cream-100: 18 2 2;
+  --color-cream-200: 32 4 4;
+
+  --color-sage-300: 75 55 55;
+  --color-sage-400: 115 125 111;
+  --color-sage-500: 145 155 140;
+
+  --color-cognac-400: 225 45 45;
+  --color-cognac-500: 195 25 25;
+  --color-cognac-600: 160 15 15;
+}
+
+[data-mode="dark"][data-theme="terracotta-ember"] {
+  --color-navy-900: 253 246 238;
+  --color-navy-800: 218 208 198;
+  --color-navy-700: 178 168 158;
+
+  --color-cream-100: 26 21 21;
+  --color-cream-200: 42 34 34;
+
+  --color-sage-300: 80 70 70;
+  --color-sage-400: 120 110 110;
+  --color-sage-500: 168 164 146;
+
+  --color-cognac-400: 255 120 90;
+  --color-cognac-500: 236 91 56;
+  --color-cognac-600: 210 67 32;
+}
+
+[data-mode="dark"][data-theme="slate-blaze"] {
+  --color-navy-900: 248 250 252;
+  --color-navy-800: 190 205 215;
+  --color-navy-700: 145 165 175;
+
+  --color-cream-100: 16 20 24;
+  --color-cream-200: 28 35 43;
+
+  --color-sage-300: 55 78 82;
+  --color-sage-400: 85 125 130;
+  --color-sage-500: 118 171 174;
+
+  --color-cognac-400: 255 118 73;
+  --color-cognac-500: 255 87 34;
+  --color-cognac-600: 224 64 11;
+}
+
+[data-mode="dark"][data-theme="burgundy-sky"] {
+  --color-navy-900: 250 245 238;
+  --color-navy-800: 205 215 225;
+  --color-navy-700: 165 180 195;
+
+  --color-cream-100: 28 3 7;
+  --color-cream-200: 46 6 12;
+
+  --color-sage-300: 75 55 70;
+  --color-sage-400: 115 130 145;
+  --color-sage-500: 174 196 212;
+
+  --color-cognac-400: 220 40 55;
+  --color-cognac-500: 190 25 40;
+  --color-cognac-600: 150 15 28;
+}
+
+[data-mode="dark"][data-theme="nordic-ruby"] {
+  --color-navy-900: 252 248 238;
+  --color-navy-800: 200 220 220;
+  --color-navy-700: 155 180 180;
+
+  --color-cream-100: 24 5 5;
+  --color-cream-200: 42 10 10;
+
+  --color-sage-300: 40 85 85;
+  --color-sage-400: 49 170 169;
+  --color-sage-500: 80 195 194;
+
+  --color-cognac-400: 225 45 45;
+  --color-cognac-500: 198 35 35;
+  --color-cognac-600: 160 20 20;
+}
+
+[data-mode="dark"][data-theme="glacier-teal"] {
+  --color-navy-900: 238 248 246;
+  --color-navy-800: 180 210 210;
+  --color-navy-700: 140 175 175;
+
+  --color-cream-100: 14 20 20;
+  --color-cream-200: 24 34 34;
+
+  --color-sage-300: 45 70 72;
+  --color-sage-400: 85 125 128;
+  --color-sage-500: 165 201 202;
+
+  --color-cognac-400: 85 155 165;
+  --color-cognac-500: 65 130 140;
+  --color-cognac-600: 45 105 115;
+}
+
+[data-mode="dark"][data-theme="celadon-salmon"] {
+  --color-navy-900: 252 248 238;
+  --color-navy-800: 210 222 210;
+  --color-navy-700: 170 185 170;
+
+  --color-cream-100: 22 13 11;
+  --color-cream-200: 38 23 20;
+
+  --color-sage-300: 65 80 65;
+  --color-sage-400: 110 135 110;
+  --color-sage-500: 181 204 181;
+
+  --color-cognac-400: 245 140 120;
+  --color-cognac-500: 223 120 97;
+  --color-cognac-600: 195 95 75;
+}
+
+[data-mode="dark"][data-theme="dusty-denim"] {
+  --color-navy-900: 248 242 232;
+  --color-navy-800: 200 210 218;
+  --color-navy-700: 160 175 188;
+
+  --color-cream-100: 22 17 15;
+  --color-cream-200: 38 30 27;
+
+  --color-sage-300: 75 65 60;
+  --color-sage-400: 115 105 95;
+  --color-sage-500: 175 152 135;
+
+  --color-cognac-400: 175 190 202;
+  --color-cognac-500: 140 160 178;
+  --color-cognac-600: 110 132 150;
+}
+
+[data-mode="dark"][data-theme="forest-gold"] {
+  --color-navy-900: 248 245 232;
+  --color-navy-800: 195 212 198;
+  --color-navy-700: 150 175 155;
+
+  --color-cream-100: 16 25 20;
+  --color-cream-200: 28 42 34;
+
+  --color-sage-300: 45 68 52;
+  --color-sage-400: 75 105 80;
+  --color-sage-500: 132 163 135;
+
+  --color-cognac-400: 215 180 115;
+  --color-cognac-500: 190 155 95;
+  --color-cognac-600: 160 125 70;
+}
+
+[data-mode="dark"][data-theme="espresso-walnut"] {
+  --color-navy-900: 245 245 235;
+  --color-navy-800: 213 206 163;
+  --color-navy-700: 170 160 125;
+
+  --color-cream-100: 14 10 7;
+  --color-cream-200: 28 19 14;
+
+  --color-sage-300: 60 48 38;
+  --color-sage-400: 95 80 65;
+  --color-sage-500: 145 135 105;
+
+  --color-cognac-400: 185 125 90;
+  --color-cognac-500: 155 100 70;
+  --color-cognac-600: 125 75 50;
+}
+
+/* =========================================================================
    BODY & AMBIENT CANVAS BACKDROP
    ========================================================================= */
 
@@ -226,7 +418,7 @@ body {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(var(--color-sage-300), 0.85);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 /* Inverted Dark Surface */
@@ -257,6 +449,63 @@ input[type="range"] {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(var(--color-cognac-500));
+}
+
+/* =========================================================================
+   DARK MODE COMPONENT ADAPTATIONS
+   ========================================================================= */
+
+[data-mode="dark"] body {
+  background-color: rgb(var(--color-cream-100));
+  color: rgb(var(--color-navy-800));
+  background-image: 
+    radial-gradient(at 15% 10%, rgba(var(--color-sage-400), 0.22) 0px, transparent 55%),
+    radial-gradient(at 85% 65%, rgba(var(--color-cognac-500), 0.14) 0px, transparent 65%);
+}
+
+[data-mode="dark"] .glass-card {
+  background: rgba(var(--color-cream-200), 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(var(--color-sage-300), 0.7);
+}
+
+[data-mode="dark"] .glass-card-dark {
+  background: rgba(var(--color-cream-100), 0.96);
+  border: 1px solid rgba(var(--color-sage-300), 0.4);
+  color: rgb(var(--color-navy-900));
+}
+
+[data-mode="dark"] input,
+[data-mode="dark"] select,
+[data-mode="dark"] textarea {
+  background-color: rgba(var(--color-cream-200), 0.9) !important;
+  color: rgb(var(--color-navy-900)) !important;
+  border-color: rgba(var(--color-sage-300), 0.6) !important;
+}
+
+[data-mode="dark"] input::placeholder,
+[data-mode="dark"] textarea::placeholder {
+  color: rgba(var(--color-navy-800), 0.5) !important;
+}
+
+[data-mode="dark"] .bg-white {
+  background-color: rgba(var(--color-cream-200), 0.9) !important;
+  color: rgb(var(--color-navy-900)) !important;
+}
+
+/* Secondary dark action buttons adaptation */
+[data-mode="dark"] a.bg-navy-900,
+[data-mode="dark"] button.bg-navy-900 {
+  background-color: rgba(var(--color-cream-200), 0.95);
+  color: rgb(var(--color-navy-900));
+  border: 1px solid rgba(var(--color-sage-300), 0.4);
+}
+
+[data-mode="dark"] a.bg-navy-900:hover,
+[data-mode="dark"] button.bg-navy-900:hover {
+  background-color: rgba(var(--color-cream-200), 1);
+  border-color: rgba(var(--color-cognac-500), 0.6);
 }
 
 /* Smooth reveal animation utilities */

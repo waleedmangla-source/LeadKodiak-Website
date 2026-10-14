@@ -87,16 +87,22 @@ export const THEMES: ThemeOption[] = [
   },
 ];
 
+export type ThemeMode = 'light' | 'dark';
+
 interface ThemeContextType {
   currentTheme: string;
   setTheme: (themeId: string) => void;
   themes: ThemeOption[];
   activeThemeOption: ThemeOption;
+  mode: ThemeMode;
+  toggleMode: () => void;
+  setMode: (mode: ThemeMode) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 const THEME_STORAGE_KEY = 'leadkodiak_theme';
+const MODE_STORAGE_KEY = 'leadkodiak_mode';
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState<string>(() => {
@@ -109,10 +115,30 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     return 'kodiak-classic';
   });
 
+  const [mode, setModeState] = useState<ThemeMode>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem(MODE_STORAGE_KEY);
+      if (saved === 'dark' || saved === 'light') {
+        return saved;
+      }
+    }
+    return 'light';
+  });
+
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', currentTheme);
     localStorage.setItem(THEME_STORAGE_KEY, currentTheme);
   }, [currentTheme]);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-mode', mode);
+    if (mode === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem(MODE_STORAGE_KEY, mode);
+  }, [mode]);
 
   const activeThemeOption =
     THEMES.find((t) => t.id === currentTheme) || THEMES[0];
@@ -123,6 +149,14 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
   };
 
+  const toggleMode = () => {
+    setModeState((prev) => (prev === 'light' ? 'dark' : 'light'));
+  };
+
+  const setMode = (newMode: ThemeMode) => {
+    setModeState(newMode);
+  };
+
   return (
     <ThemeContext.Provider
       value={{
@@ -130,6 +164,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         setTheme,
         themes: THEMES,
         activeThemeOption,
+        mode,
+        toggleMode,
+        setMode,
       }}
     >
       {children}
