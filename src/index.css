@@ -2,38 +2,156 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ambient Canvas Backdrop from DESIGN.md */
+/* =========================================================================
+   THEME DEFINITIONS & DYNAMIC CSS VARIABLES
+   ========================================================================= */
+
+:root,
+[data-theme="kodiak-classic"] {
+  --color-navy-900: 7 30 54;
+  --color-navy-800: 10 41 71;
+  --color-navy-700: 18 55 92;
+
+  --color-cream-100: 243 228 201;
+  --color-cream-200: 232 210 175;
+
+  --color-sage-300: 211 212 192;
+  --color-sage-400: 188 190 165;
+  --color-sage-500: 159 161 138;
+
+  --color-cognac-400: 166 116 78;
+  --color-cognac-500: 139 94 60;
+  --color-cognac-600: 115 76 46;
+}
+
+/* Palette 1: https://colorhunt.co/palette/6d08082d0000757d6feeead7 */
+[data-theme="crimson-slate"] {
+  --color-navy-900: 26 0 0;
+  --color-navy-800: 45 0 0;
+  --color-navy-700: 74 5 5;
+
+  --color-cream-100: 238 234 215;
+  --color-cream-200: 221 215 190;
+
+  --color-sage-300: 175 182 170;
+  --color-sage-400: 117 125 111;
+  --color-sage-500: 88 94 83;
+
+  --color-cognac-400: 139 21 21;
+  --color-cognac-500: 109 8 8;
+  --color-cognac-600: 80 5 5;
+}
+
+/* Palette 2: https://colorhunt.co/palette/524646a8a492fcf2e5ec5b38 */
+[data-theme="terracotta-ember"] {
+  --color-navy-900: 56 47 47;
+  --color-navy-800: 82 70 70;
+  --color-navy-700: 106 92 92;
+
+  --color-cream-100: 252 242 229;
+  --color-cream-200: 243 225 203;
+
+  --color-sage-300: 203 199 183;
+  --color-sage-400: 168 164 146;
+  --color-sage-500: 136 132 116;
+
+  --color-cognac-400: 242 117 87;
+  --color-cognac-500: 236 91 56;
+  --color-cognac-600: 210 67 32;
+}
+
+/* Palette 3: https://colorhunt.co/palette/f5f5f576abae303841ff5722 */
+[data-theme="slate-blaze"] {
+  --color-navy-900: 30 36 43;
+  --color-navy-800: 48 56 65;
+  --color-navy-700: 69 81 94;
+
+  --color-cream-100: 245 245 245;
+  --color-cream-200: 228 231 234;
+
+  --color-sage-300: 162 200 203;
+  --color-sage-400: 118 171 174;
+  --color-sage-500: 86 135 138;
+
+  --color-cognac-400: 255 118 73;
+  --color-cognac-500: 255 87 34;
+  --color-cognac-600: 224 64 11;
+}
+
+/* Palette 4: https://colorhunt.co/palette/790d16e5d3aff5efe1aec4d4 */
+[data-theme="burgundy-sky"] {
+  --color-navy-900: 75 4 11;
+  --color-navy-800: 121 13 22;
+  --color-navy-700: 156 21 33;
+
+  --color-cream-100: 245 239 225;
+  --color-cream-200: 229 211 175;
+
+  --color-sage-300: 203 215 226;
+  --color-sage-400: 174 196 212;
+  --color-sage-500: 141 165 183;
+
+  --color-cognac-400: 156 21 33;
+  --color-cognac-500: 121 13 22;
+  --color-cognac-600: 90 7 14;
+}
+
+/* Palette 5: https://colorhunt.co/palette/31aaa9f8e0a4a820206c1a1a */
+[data-theme="nordic-ruby"] {
+  --color-navy-900: 66 13 13;
+  --color-navy-800: 108 26 26;
+  --color-navy-700: 138 36 36;
+
+  --color-cream-100: 252 246 232;
+  --color-cream-200: 248 224 164;
+
+  --color-sage-300: 148 215 214;
+  --color-sage-400: 49 170 169;
+  --color-sage-500: 34 130 129;
+
+  --color-cognac-400: 195 42 42;
+  --color-cognac-500: 168 32 32;
+  --color-cognac-600: 134 23 23;
+}
+
+/* =========================================================================
+   BODY & AMBIENT CANVAS BACKDROP
+   ========================================================================= */
+
 body {
-  background-color: #F3E4C9;
-  color: #0A2947;
+  background-color: rgb(var(--color-cream-100));
+  color: rgb(var(--color-navy-800));
   background-image: 
-    radial-gradient(at 15% 10%, rgba(211, 212, 192, 0.5) 0px, transparent 50%),
-    radial-gradient(at 85% 65%, rgba(139, 94, 60, 0.12) 0px, transparent 60%);
+    radial-gradient(at 15% 10%, rgba(var(--color-sage-300), 0.45) 0px, transparent 50%),
+    radial-gradient(at 85% 65%, rgba(var(--color-cognac-500), 0.12) 0px, transparent 60%);
   background-attachment: fixed;
   font-family: 'Plus Jakarta Sans', sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Light Glass Surface */
 .glass-card {
-  background: rgba(243, 228, 201, 0.72);
+  background: rgba(var(--color-cream-100), 0.76);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(211, 212, 192, 0.85);
+  border: 1px solid rgba(var(--color-sage-300), 0.85);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Inverted Dark Surface */
 .glass-card-dark {
-  background: rgba(10, 41, 71, 0.96);
+  background: rgba(var(--color-navy-800), 0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(211, 212, 192, 0.2);
-  color: #F3E4C9;
+  border: 1px solid rgba(var(--color-sage-300), 0.2);
+  color: rgb(var(--color-cream-100));
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Interactive Sliders styling */
 input[type="range"] {
-  accent-color: #8B5E3C;
+  accent-color: rgb(var(--color-cognac-500));
 }
 
 /* Custom Scrollbar */
@@ -41,14 +159,14 @@ input[type="range"] {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F3E4C9;
+  background: rgb(var(--color-cream-100));
 }
 ::-webkit-scrollbar-thumb {
-  background: #BCBEA5;
+  background: rgb(var(--color-sage-400));
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #8B5E3C;
+  background: rgb(var(--color-cognac-500));
 }
 
 /* Smooth reveal animation utilities */

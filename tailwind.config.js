@@ -8,21 +8,23 @@ export default {
     extend: {
       colors: {
         navy: {
-          900: '#071E36',
-          800: '#0A2947',
-          700: '#12375C',
+          900: 'rgb(var(--color-navy-900) / <alpha-value>)',
+          800: 'rgb(var(--color-navy-800) / <alpha-value>)',
+          700: 'rgb(var(--color-navy-700) / <alpha-value>)',
         },
         cream: {
-          100: '#F3E4C9',
-          200: '#E8D2AF',
+          100: 'rgb(var(--color-cream-100) / <alpha-value>)',
+          200: 'rgb(var(--color-cream-200) / <alpha-value>)',
         },
         sage: {
-          300: '#D3D4C0',
-          400: '#BCBEA5',
+          300: 'rgb(var(--color-sage-300) / <alpha-value>)',
+          400: 'rgb(var(--color-sage-400) / <alpha-value>)',
+          500: 'rgb(var(--color-sage-500) / <alpha-value>)',
         },
         cognac: {
-          500: '#8B5E3C',
-          600: '#734C2E',
+          400: 'rgb(var(--color-cognac-400) / <alpha-value>)',
+          500: 'rgb(var(--color-cognac-500) / <alpha-value>)',
+          600: 'rgb(var(--color-cognac-600) / <alpha-value>)',
         },
       },
       fontFamily: {
@@ -30,9 +32,9 @@ export default {
         mono: ['"Space Grotesk"', 'monospace'],
       },
       boxShadow: {
-        'glass': '0 8px 32px 0 rgba(10, 41, 71, 0.08)',
-        'glass-dark': '0 8px 32px 0 rgba(7, 30, 54, 0.37)',
-        'cognac-glow': '0 0 25px rgba(139, 94, 60, 0.35)',
+        'glass': '0 8px 32px 0 rgba(var(--color-navy-800), 0.08)',
+        'glass-dark': '0 8px 32px 0 rgba(var(--color-navy-900), 0.37)',
+        'cognac-glow': '0 0 25px rgba(var(--color-cognac-500), 0.35)',
       }
     },
   },

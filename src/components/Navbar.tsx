@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { KodiakLogo } from './KodiakLogo';
+import { ThemeSwitcher } from './ThemeSwitcher';
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -37,7 +38,7 @@ export const Navbar: React.FC = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-4">
           {/* Brand with Bear Logo Placeholder */}
           <KodiakLogo iconSize={40} />
 
@@ -67,8 +68,14 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden">
+          {/* Desktop Theme Switcher */}
+          <div className="hidden md:flex items-center">
+            <ThemeSwitcher />
+          </div>
+
+          {/* Mobile Right Controls: Theme Switcher + Menu Button */}
+          <div className="flex md:hidden items-center gap-2">
+            <ThemeSwitcher compact={true} />
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
