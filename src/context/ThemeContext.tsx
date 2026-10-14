@@ -57,6 +57,34 @@ export const THEMES: ThemeOption[] = [
     swatches: ['#2C3333', '#A5C9CA', '#E7F6F2', '#395B64'],
     colorHuntUrl: 'https://colorhunt.co/palette/2c3333395b64a5c9cae7f6f2',
   },
+  {
+    id: 'celadon-salmon',
+    name: 'Celadon & Salmon',
+    subtitle: 'Mint, Peach & Rust',
+    swatches: ['#3A241F', '#D4E2D4', '#FCF8E8', '#DF7861'],
+    colorHuntUrl: 'https://colorhunt.co/palette/fcf8e8d4e2d4ecb390df7861',
+  },
+  {
+    id: 'dusty-denim',
+    name: 'Dusty Denim & Sand',
+    subtitle: 'Slate Blue, Oat & Cocoa',
+    swatches: ['#403430', '#D7C0AE', '#EEE3CB', '#9BABB8'],
+    colorHuntUrl: 'https://colorhunt.co/palette/9babb8eee3cbd7c0ae967e76',
+  },
+  {
+    id: 'forest-gold',
+    name: 'Forest & Antique Gold',
+    subtitle: 'Deep Evergreen & Ochre',
+    swatches: ['#395144', '#4E6C50', '#F0EBCE', '#AA8B56'],
+    colorHuntUrl: 'https://colorhunt.co/palette/3951444e6c50aa8b56f0ebce',
+  },
+  {
+    id: 'espresso-walnut',
+    name: 'Espresso & Walnut',
+    subtitle: 'Black Earth & Khaki Bone',
+    swatches: ['#1A120B', '#D5CEA3', '#E5E5CB', '#3C2A21'],
+    colorHuntUrl: 'https://colorhunt.co/palette/1a120b3c2a21d5cea3e5e5cb',
+  },
 ];
 
 interface ThemeContextType {

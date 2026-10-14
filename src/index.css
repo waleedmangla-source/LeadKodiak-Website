@@ -132,6 +132,78 @@
   --color-cognac-600: 43 71 78;
 }
 
+/* Palette 7: https://colorhunt.co/palette/fcf8e8d4e2d4ecb390df7861 */
+[data-theme="celadon-salmon"] {
+  --color-navy-900: 35 20 17;
+  --color-navy-800: 58 36 31;
+  --color-navy-700: 85 55 48;
+
+  --color-cream-100: 252 248 232;
+  --color-cream-200: 244 237 208;
+
+  --color-sage-300: 212 226 212;
+  --color-sage-400: 181 204 181;
+  --color-sage-500: 143 168 143;
+
+  --color-cognac-400: 236 179 144;
+  --color-cognac-500: 223 120 97;
+  --color-cognac-600: 199 94 71;
+}
+
+/* Palette 8: https://colorhunt.co/palette/9babb8eee3cbd7c0ae967e76 */
+[data-theme="dusty-denim"] {
+  --color-navy-900: 35 27 25;
+  --color-navy-800: 64 52 48;
+  --color-navy-700: 95 78 72;
+
+  --color-cream-100: 238 227 203;
+  --color-cream-200: 223 209 179;
+
+  --color-sage-300: 215 192 174;
+  --color-sage-400: 175 152 135;
+  --color-sage-500: 140 120 105;
+
+  --color-cognac-400: 155 171 184;
+  --color-cognac-500: 102 124 140;
+  --color-cognac-600: 78 97 110;
+}
+
+/* Palette 9: https://colorhunt.co/palette/3951444e6c50aa8b56f0ebce */
+[data-theme="forest-gold"] {
+  --color-navy-900: 35 51 42;
+  --color-navy-800: 57 81 68;
+  --color-navy-700: 78 108 80;
+
+  --color-cream-100: 240 235 206;
+  --color-cream-200: 226 218 173;
+
+  --color-sage-300: 185 204 187;
+  --color-sage-400: 132 163 135;
+  --color-sage-500: 78 108 80;
+
+  --color-cognac-400: 195 162 104;
+  --color-cognac-500: 170 139 86;
+  --color-cognac-600: 140 112 65;
+}
+
+/* Palette 10: https://colorhunt.co/palette/1a120b3c2a21d5cea3e5e5cb */
+[data-theme="espresso-walnut"] {
+  --color-navy-900: 26 18 11;
+  --color-navy-800: 60 42 33;
+  --color-navy-700: 86 61 48;
+
+  --color-cream-100: 229 229 203;
+  --color-cream-200: 216 216 182;
+
+  --color-sage-300: 213 206 163;
+  --color-sage-400: 189 180 127;
+  --color-sage-500: 154 145 94;
+
+  --color-cognac-400: 163 108 77;
+  --color-cognac-500: 135 85 58;
+  --color-cognac-600: 98 59 38;
+}
+
 /* =========================================================================
    BODY & AMBIENT CANVAS BACKDROP
    ========================================================================= */
