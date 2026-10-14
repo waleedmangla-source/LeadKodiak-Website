@@ -1,380 +1,337 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ScrollReveal } from '../components/ScrollReveal';
 import { KodiakBearIcon } from '../components/KodiakLogo';
 import {
-  Users,
-  PhoneCall,
   Layout,
-  MessageSquare,
-  GitBranch,
-  ShieldAlert,
+  Smartphone,
+  Megaphone,
+  Sparkles,
   ArrowRight,
   CheckCircle2,
-  Repeat,
-  Radio,
-  FileCheck,
+  PhoneCall,
+  Calendar,
 } from 'lucide-react';
 
-const servicesList = [
-  {
-    id: 'crm',
-    title: 'Omnichannel CRM & Pipeline Intelligence',
-    icon: Users,
-    tagline: 'Track every lead from first touch to closed contract.',
-    description:
-      'Replace bloated enterprise CRMs with a streamlined, lightning-fast deal board. Visualize sales pipelines, track contact interaction timelines, create custom attributes, and assign opportunities to team members automatically.',
-    features: [
-      'Visual drag-and-drop Kanban deal pipelines',
-      'Unified activity timeline (calls, emails, texts, page visits)',
-      'Smart contact segmentation & automated lead scoring',
-      'Custom fields, tags, and automated opportunity value tracking',
-      'Bulk action filters and smart contact lists',
-    ],
-    telemetry: 'Sync Latency: <120ms',
-  },
-  {
-    id: 'voice',
-    title: 'Kodiak Voice & Autonomous AI Agents',
-    icon: PhoneCall,
-    tagline: '18-second speed-to-lead with human-grade conversational voice.',
-    description:
-      'Never allow an inbound lead to go cold. When a form is submitted or an ad is clicked, Kodiak Voice AI immediately calls the prospect, answers specific questions, handles objections, and schedules them directly into your calendar.',
-    features: [
-      'Sub-450ms voice conversational latency',
-      'Context-aware objection handling and customized company knowledge base',
-      'Autonomous live calendar appointment booking',
-      'Seamless warm-transfer to live human sales reps',
-      'Call recording, full sentiment analysis, and transcript storage',
-    ],
-    telemetry: 'Average Booking Conversion: 41.8%',
-  },
-  {
-    id: 'funnels',
-    title: 'High-Velocity Funnels & Website Builder',
-    icon: Layout,
-    tagline: 'Engineered for conversion, speed, and clean code.',
-    description:
-      'Construct high-converting landing pages, full corporate websites, and multi-step sales funnels in minutes. Includes built-in A/B split testing, dynamic URL parameters, and frictionless checkout integrations.',
-    features: [
-      'Intuitive visual drag-and-drop page editor',
-      'Pre-built industry snapshots (HVAC, Medspa, Real Estate, Legal, SaaS)',
-      'Native 2-step checkout with Stripe, Apple Pay & Google Pay',
-      'Built-in A/B split testing with traffic distribution controls',
-      'Optimized Core Web Vitals (98+ Google PageSpeed score)',
-    ],
-    telemetry: 'Avg Page Load Time: 0.6s',
-  },
-  {
-    id: 'inbox',
-    title: 'Unified Conversational Inbox',
-    icon: MessageSquare,
-    tagline: 'All customer channels streaming into one collaborative workspace.',
-    description:
-      'Eliminate tab fatigue. Manage SMS, MMS, 2-way email, WhatsApp, Instagram Direct, Facebook Messenger, and live webchat from a single consolidated screen.',
-    features: [
-      'Two-way SMS/MMS with local number provisioning',
-      'Centralized WhatsApp, Instagram DMs & Facebook Messenger streams',
-      'Live website chat widget with automated AI triage',
-      'Internal team notes, mentions, and conversation reassignment',
-      'Pre-written canned replies and snippet templates',
-    ],
-    telemetry: 'Channels Consolidated: 7+',
-  },
-  {
-    id: 'workflows',
-    title: 'Visual Workflow Automations & Event Triggers',
-    icon: GitBranch,
-    tagline: 'Build complex if/then sequences without writing a single line of code.',
-    description:
-      'Connect every system action into automated workflows. When a prospect books a call, automatically trigger confirmation texts, calendar reminders, CRM stage updates, internal Slack alerts, and invoice generation.',
-    features: [
-      'Visual flowchart automation builder with conditional branching',
-      'Pre-built trigger templates (Missed-Call Text-Back, Review Requests)',
-      'Time delays, window gating, and appointment-relative timing',
-      'Inbound/outbound webhook support for custom web apps and Zapier',
-      'Automatic internal team notifications via SMS, push, or email',
-    ],
-    telemetry: 'Reliability: 99.99% Event Execution',
-  },
-  {
-    id: 'saas',
-    title: 'White-Label Agency Reselling (SaaS Mode)',
-    icon: ShieldAlert,
-    tagline: 'Package and resell Lead Kodiak as your agency’s proprietary software.',
-    description:
-      'Transform your agency into a software company with recurring SaaS margins. Put your domain, your logo, your colors, and your pricing on the entire platform. Keep 100% of your software subscription revenues and profit on client usage.',
-    features: [
-      'Full custom domain mapping (app.youragency.com)',
-      'Custom branding, logo, favicon, and login screen',
-      'Automated client sub-account creation via Stripe checkout',
-      'Rebill client SMS, voice, and AI usage with customizable markups (2x-5x)',
-      'Deploy turnkey agency "snapshots" into client accounts with 1 click',
-    ],
-    telemetry: 'Typical Agency Margin: 78-85%',
-  },
-];
-
 export const ServicesPage: React.FC = () => {
-  const [selectedService, setSelectedService] = useState<string>('crm');
-
-  const currentActive = servicesList.find((s) => s.id === selectedService) || servicesList[0];
-
   return (
     <div className="pt-28 pb-16 space-y-24 md:space-y-32">
       {/* 1. HERO HEADER */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center pt-8 md:pt-12">
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center pt-8 md:pt-14">
         <ScrollReveal direction="up">
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sage-300 text-navy-800 text-xs sm:text-sm font-semibold shadow-sm mb-6 border border-sage-400/50">
-            <KodiakBearIcon size={14} />
-            <span className="font-mono tracking-wider">PLATFORM ARCHITECTURE & CAPABILITIES</span>
+            <KodiakBearIcon size={15} />
+            <span className="font-mono tracking-wider uppercase">
+              LEAD KODIAK • CORE SERVICES
+            </span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-navy-900 tracking-tight leading-tight max-w-4xl mx-auto">
-            Everything Your Revenue Team Needs.{' '}
-            <span className="text-cognac-500">Zero Arbitrary Bloat.</span>
+            In Short, Our{' '}
+            <span className="text-cognac-500">Main Services</span>.
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl text-navy-800/80 max-w-3xl mx-auto leading-relaxed">
-            Lead Kodiak is engineered from first principles as an integrated operating system.
-            Explore the 6 core pillars powering over 14,800 agencies and commercial enterprises.
+            Everything your company needs to capture, nurture, and close leads without
+            juggling five different tools or knocking on doors in extreme weather.
+            A detailed breakdown is provided in your free consultation.
           </p>
-        </ScrollReveal>
-      </section>
 
-      {/* 2. INTERACTIVE SERVICE NAVIGATOR & DEEP DIVE */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal direction="up">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Left Column: Pillar Selector */}
-            <div className="lg:col-span-4 space-y-2">
-              <div className="text-xs font-mono uppercase tracking-widest text-cognac-500 font-bold mb-3 px-2">
-                CORE SYSTEM PILLARS
-              </div>
-              {servicesList.map((service, index) => {
-                const isSelected = selectedService === service.id;
-                const IconComponent = service.icon;
-                return (
-                  <button
-                    key={service.id}
-                    onClick={() => setSelectedService(service.id)}
-                    className={`w-full p-4 rounded-xl text-left border transition-all flex items-center justify-between ${
-                      isSelected
-                        ? 'bg-navy-900 text-cream-100 border-navy-900 shadow-md translate-x-1'
-                        : 'glass-card text-navy-800 border-sage-300 hover:bg-sage-300/40'
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <div
-                        className={`p-2 rounded-lg ${
-                          isSelected ? 'bg-navy-800 text-cognac-500' : 'bg-sage-300/60 text-navy-800'
-                        }`}
-                      >
-                        <IconComponent size={20} />
-                      </div>
-                      <div>
-                        <div className="text-xs font-mono opacity-70">MOD 0{index + 1}</div>
-                        <div className="font-bold text-sm leading-tight">{service.title}</div>
-                      </div>
-                    </div>
-                    <ArrowRight
-                      size={16}
-                      className={`shrink-0 transition-transform ${
-                        isSelected ? 'text-cognac-500 translate-x-1' : 'opacity-40'
-                      }`}
-                    />
-                  </button>
-                );
-              })}
-            </div>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              to="/contact"
+              className="px-8 py-4 bg-cognac-500 hover:bg-cognac-600 text-white font-bold text-base rounded-xl active:scale-95 transition-all shadow-cognac-glow flex items-center justify-center gap-2 group"
+            >
+              <Calendar size={18} />
+              <span>Book Your Consultation</span>
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
 
-            {/* Right Column: Active Pillar Spotlight */}
-            <div className="lg:col-span-8">
-              <div className="glass-card-dark rounded-2xl p-6 sm:p-10 border border-sage-300/20 shadow-glass-dark relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-6 opacity-10">
-                  <KodiakBearIcon size={160} inverted={true} />
-                </div>
-
-                <div className="relative z-10 space-y-6">
-                  <div className="flex flex-wrap items-center justify-between gap-3 border-b border-sage-300/15 pb-4">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-navy-900 text-xs font-mono text-cognac-500 border border-sage-300/10">
-                      <Radio size={14} className="text-emerald-400 animate-pulse" />
-                      <span>{currentActive.telemetry}</span>
-                    </div>
-                    <span className="text-xs font-mono text-sage-300/70">
-                      ENTERPRISE READY &bull; HIGH THROUGHPUT
-                    </span>
-                  </div>
-
-                  <div>
-                    <h2 className="text-2xl sm:text-3xl font-extrabold text-cream-100 mb-2">
-                      {currentActive.title}
-                    </h2>
-                    <p className="text-cognac-500 text-base font-semibold font-mono">
-                      {currentActive.tagline}
-                    </p>
-                  </div>
-
-                  <p className="text-sage-300 text-sm sm:text-base leading-relaxed">
-                    {currentActive.description}
-                  </p>
-
-                  <div className="pt-2">
-                    <div className="text-xs font-mono uppercase tracking-wider text-cream-100 font-bold mb-3">
-                      KEY ARCHITECTURAL HIGHLIGHTS:
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {currentActive.features.map((feat, i) => (
-                        <div
-                          key={i}
-                          className="bg-navy-900/80 p-3 rounded-xl border border-sage-300/10 flex items-start gap-2.5 text-xs text-cream-100/90"
-                        >
-                          <CheckCircle2 size={16} className="text-cognac-500 shrink-0 mt-0.5" />
-                          <span>{feat}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
-                    <Link
-                      to="/plans-discounts"
-                      className="w-full sm:w-auto px-6 py-3 bg-cognac-500 hover:bg-cognac-600 text-white font-bold text-sm rounded-xl active:scale-95 transition-all shadow-md flex items-center justify-center gap-2"
-                    >
-                      <span>Unlock This In Your Plan</span>
-                      <ArrowRight size={16} />
-                    </Link>
-
-                    <Link
-                      to="/our-work"
-                      className="w-full sm:w-auto px-6 py-3 bg-navy-900 border border-sage-300/30 text-cream-100 font-bold text-sm rounded-xl hover:bg-navy-800 transition-all flex items-center justify-center gap-2"
-                    >
-                      <span>View Real Case Results</span>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <a
+              href="tel:18005550199"
+              className="px-8 py-4 glass-card text-navy-900 font-bold text-base rounded-xl hover:bg-sage-300/40 transition-all flex items-center justify-center gap-2"
+            >
+              <PhoneCall size={18} className="text-cognac-500" />
+              <span>Call (800) 555-LEAD</span>
+            </a>
           </div>
         </ScrollReveal>
       </section>
 
-      {/* 3. HOW THE KODIAK PIPELINE FLOWS (Dataflow diagram) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal direction="up">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-xs font-mono uppercase tracking-widest text-cognac-500 font-bold mb-3">
-              END-TO-END AUTOMATION FLOW
-            </h2>
-            <h3 className="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
-              From Anonymous Traffic To Retained Client
-            </h3>
-            <p className="mt-3 text-navy-800/70 text-base">
-              See how the 6 engines harmonize to automate client acquisition 24/7 without dropped balls.
+      {/* 2. THE 4 MAIN SERVICES */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Service 1: Strategically Designed Website */}
+          <ScrollReveal direction="up" delay={100}>
+            <div className="glass-card rounded-3xl p-8 sm:p-10 border border-sage-300 shadow-glass flex flex-col justify-between h-full group hover:-translate-y-1 transition-all">
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-navy-900 text-cream-100 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+                    <Layout size={26} />
+                  </div>
+                  <span className="font-mono text-xs font-bold text-cognac-600 px-3 py-1 rounded-full bg-cognac-500/10 border border-cognac-500/20">
+                    SERVICE 01
+                  </span>
+                </div>
+
+                <h3 className="text-2xl font-extrabold text-navy-900 mb-4">
+                  1. Strategically Designed Website
+                </h3>
+
+                <p className="text-navy-800/80 text-sm sm:text-base leading-relaxed mb-6">
+                  We don't build generic brochure templates. We engineer high-converting, mobile-first websites tailored for homeowners and residential buyers looking for quality craftmanship.
+                </p>
+
+                <ul className="space-y-3 text-sm text-navy-900 font-medium">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={18} className="text-cognac-500 shrink-0 mt-0.5" />
+                    <span>Conversion-optimized page layout engineered for consultation bookings</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={18} className="text-cognac-500 shrink-0 mt-0.5" />
+                    <span>Blazing-fast mobile loading speed (sub-second performance)</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={18} className="text-cognac-500 shrink-0 mt-0.5" />
+                    <span>Local Google SEO optimization with structured schema tags</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={18} className="text-cognac-500 shrink-0 mt-0.5" />
+                    <span>Instant estimate and contact forms tied directly into your pipeline</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-8 pt-4 border-t border-sage-300/60 flex items-center justify-between text-xs font-mono text-navy-800 font-bold">
+                <span>Fully Managed & Hosted</span>
+                <span className="text-cognac-600">Zero Maintenance Headache</span>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Service 2: Lead System + App & Management */}
+          <ScrollReveal direction="up" delay={200}>
+            <div className="glass-card rounded-3xl p-8 sm:p-10 border border-sage-300 shadow-glass flex flex-col justify-between h-full group hover:-translate-y-1 transition-all">
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-cognac-500 text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+                    <Smartphone size={26} />
+                  </div>
+                  <span className="font-mono text-xs font-bold text-cognac-600 px-3 py-1 rounded-full bg-cognac-500/10 border border-cognac-500/20">
+                    SERVICE 02
+                  </span>
+                </div>
+
+                <h3 className="text-2xl font-extrabold text-navy-900 mb-4">
+                  2. Lead System + App & Management
+                </h3>
+
+                <p className="text-navy-800/80 text-sm sm:text-base leading-relaxed mb-6">
+                  A centralized mobile command center in your pocket. Capture every inquiry from your ads, website, and social channels into one unified inbox.
+                </p>
+
+                <ul className="space-y-3 text-sm text-navy-900 font-medium">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={18} className="text-cognac-500 shrink-0 mt-0.5" />
+                    <span>Centralized mobile inbox app for iOS and Android</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={18} className="text-cognac-500 shrink-0 mt-0.5" />
+                    <span>Sub-30-second automated SMS follow-up when new inquiries arrive</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={18} className="text-cognac-500 shrink-0 mt-0.5" />
+                    <span>Missed-call automatic text-back so prospects don't call competitors</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={18} className="text-cognac-500 shrink-0 mt-0.5" />
+                    <span>Automated calendar appointment scheduling & SMS reminders</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-8 pt-4 border-t border-sage-300/60 flex items-center justify-between text-xs font-mono text-navy-800 font-bold">
+                <span>Speed-To-Lead</span>
+                <span className="text-cognac-600">&lt; 30 Seconds Automated</span>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Service 3: Meta Ads Setup & Management */}
+          <ScrollReveal direction="up" delay={300}>
+            <div className="glass-card rounded-3xl p-8 sm:p-10 border border-sage-300 shadow-glass flex flex-col justify-between h-full group hover:-translate-y-1 transition-all">
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-navy-900 text-cream-100 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+                    <Megaphone size={26} />
+                  </div>
+                  <span className="font-mono text-xs font-bold text-cognac-600 px-3 py-1 rounded-full bg-cognac-500/10 border border-cognac-500/20">
+                    SERVICE 03
+                  </span>
+                </div>
+
+                <h3 className="text-2xl font-extrabold text-navy-900 mb-4">
+                  3. Meta Ads Setup & Management
+                </h3>
+
+                <p className="text-navy-800/80 text-sm sm:text-base leading-relaxed mb-6">
+                  Targeted Facebook & Instagram ad campaigns designed to generate high-intent consultations, not window-shoppers. We handle setup, ad copy, creative, and ongoing budget management.
+                </p>
+
+                <ul className="space-y-3 text-sm text-navy-900 font-medium">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={18} className="text-cognac-500 shrink-0 mt-0.5" />
+                    <span>Geo-targeted campaigns focused strictly within your service radius</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={18} className="text-cognac-500 shrink-0 mt-0.5" />
+                    <span>Battle-tested creative hooks proven with our own blinds company</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={18} className="text-cognac-500 shrink-0 mt-0.5" />
+                    <span>Continuous A/B split-testing without burning your ad budget</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={18} className="text-cognac-500 shrink-0 mt-0.5" />
+                    <span>Clear weekly and monthly ROI reporting on appointments booked</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-8 pt-4 border-t border-sage-300/60 flex items-center justify-between text-xs font-mono text-navy-800 font-bold">
+                <span>Proven Campaign Templates</span>
+                <span className="text-cognac-600">Zero Guesswork</span>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Service 4: & More */}
+          <ScrollReveal direction="up" delay={400}>
+            <div className="glass-card rounded-3xl p-8 sm:p-10 border border-sage-300 shadow-glass flex flex-col justify-between h-full group hover:-translate-y-1 transition-all">
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-amber-500/20 text-amber-700 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+                    <Sparkles size={26} />
+                  </div>
+                  <span className="font-mono text-xs font-bold text-cognac-600 px-3 py-1 rounded-full bg-cognac-500/10 border border-cognac-500/20">
+                    SERVICE 04
+                  </span>
+                </div>
+
+                <h3 className="text-2xl font-extrabold text-navy-900 mb-4">
+                  4. & More
+                </h3>
+
+                <p className="text-navy-800/80 text-sm sm:text-base leading-relaxed mb-6">
+                  Full-funnel automated systems designed to maximize the lifetime value of every customer and protect your local brand reputation.
+                </p>
+
+                <ul className="space-y-3 text-sm text-navy-900 font-medium">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={18} className="text-cognac-500 shrink-0 mt-0.5" />
+                    <span>Automated Google Review generation requests after job completion</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={18} className="text-cognac-500 shrink-0 mt-0.5" />
+                    <span>Re-engagement campaigns for past leads and seasonal promos</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={18} className="text-cognac-500 shrink-0 mt-0.5" />
+                    <span>Dedicated 24/7 technical support and rapid troubleshooting</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 size={18} className="text-cognac-500 shrink-0 mt-0.5" />
+                    <span>Custom operational automations tailored to your workflow</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-8 pt-4 border-t border-sage-300/60 flex items-center justify-between text-xs font-mono text-navy-800 font-bold">
+                <span>Tailored Setup</span>
+                <span className="text-cognac-600">Discussed in Consultation</span>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+
+        {/* Note: Detailed Breakdown Provided in Consultation */}
+        <ScrollReveal direction="up" delay={450}>
+          <div className="mt-8 p-6 rounded-2xl glass-card border border-sage-300 text-center max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base font-semibold text-navy-900">
+              📌 <span className="font-bold text-cognac-600">Please Note:</span> A detailed, customized breakdown of all deliverables, tech integrations, and campaign projections is provided during your free strategy consultation.
             </p>
           </div>
+        </ScrollReveal>
+      </section>
 
-          <div className="glass-card rounded-2xl p-6 sm:p-10 border border-sage-300 shadow-glass">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
-              {/* Step 1 */}
-              <div className="bg-cream-100/80 p-5 rounded-xl border border-sage-300 relative space-y-3">
-                <div className="w-8 h-8 rounded-lg bg-navy-800 text-cream-100 font-mono font-bold flex items-center justify-center text-xs">
-                  01
-                </div>
-                <div className="font-bold text-navy-900 text-sm">Traffic Ingestion</div>
-                <p className="text-xs text-navy-800/70 leading-relaxed">
-                  Paid ads, organic SEO, or local search directs prospects into high-converting Kodiak funnels.
-                </p>
-                <div className="text-[11px] font-mono text-cognac-500 font-bold">
-                  Conversion: 8-14%
-                </div>
-              </div>
+      {/* 3. INDUSTRIES WE SERVE CURRENTLY */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <ScrollReveal direction="up">
+          <div className="glass-card rounded-3xl p-8 sm:p-12 border-2 border-sage-300 shadow-glass text-center">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sage-300 text-navy-800 text-xs font-bold font-mono tracking-widest uppercase mb-4">
+              SPECIALIZED NICHE EXPERTISE
+            </div>
 
-              {/* Step 2 */}
-              <div className="bg-cream-100/80 p-5 rounded-xl border border-sage-300 relative space-y-3">
-                <div className="w-8 h-8 rounded-lg bg-navy-800 text-cream-100 font-mono font-bold flex items-center justify-center text-xs">
-                  02
-                </div>
-                <div className="font-bold text-navy-900 text-sm">Sub-30s AI Voice Dispatch</div>
-                <p className="text-xs text-navy-800/70 leading-relaxed">
-                  Kodiak Voice calls the prospect within 20 seconds. Pre-qualifies budget, timeline, and location.
-                </p>
-                <div className="text-[11px] font-mono text-emerald-700 font-bold">
-                  Speed: 18.2s Avg
-                </div>
-              </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+              Industries We Serve Currently
+            </h2>
 
-              {/* Step 3 */}
-              <div className="bg-cream-100/80 p-5 rounded-xl border border-sage-300 relative space-y-3">
-                <div className="w-8 h-8 rounded-lg bg-navy-800 text-cream-100 font-mono font-bold flex items-center justify-center text-xs">
-                  03
-                </div>
-                <div className="font-bold text-navy-900 text-sm">Calendar & Closing</div>
-                <p className="text-xs text-navy-800/70 leading-relaxed">
-                  Meeting scheduled on team round-robin calendar. Automated SMS reminders prevent no-shows.
-                </p>
-                <div className="text-[11px] font-mono text-cognac-500 font-bold">
-                  Show-up Rate: 84%
-                </div>
-              </div>
+            <p className="mt-3 text-base sm:text-lg text-navy-800/80 max-w-2xl mx-auto">
+              We focus on niches where we have direct operational proof and verified sales track records.
+            </p>
 
-              {/* Step 4 */}
-              <div className="bg-cream-100/80 p-5 rounded-xl border border-sage-300 relative space-y-3">
-                <div className="w-8 h-8 rounded-lg bg-navy-800 text-cream-100 font-mono font-bold flex items-center justify-center text-xs">
-                  04
-                </div>
-                <div className="font-bold text-navy-900 text-sm">Billing & Review Loop</div>
-                <p className="text-xs text-navy-800/70 leading-relaxed">
-                  Stripe e-contract signed, automated onboarding triggered, and automated 5-star Google review sent.
-                </p>
-                <div className="text-[11px] font-mono text-emerald-700 font-bold">
-                  Retention: +32% MoM
-                </div>
+            <div className="mt-8 max-w-xl mx-auto p-6 rounded-2xl bg-navy-900 text-cream-100 border border-sage-300/20 shadow-md text-left flex items-start gap-4">
+              <div className="w-12 h-12 rounded-xl bg-cognac-500 text-white flex items-center justify-center font-mono font-extrabold text-xl shrink-0 mt-1">
+                1
               </div>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <h3 className="text-xl font-bold text-cream-100">
+                    Window Coverings
+                  </h3>
+                  <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-[10px] uppercase font-bold border border-emerald-500/30">
+                    Active & Proven
+                  </span>
+                </div>
+                <p className="text-sage-300 text-sm leading-relaxed">
+                  Specialized in generating high-ticket residential and commercial blind, shade, and shutter appointments. Tested and proven in our own Canadian operations at <span className="text-cognac-400 font-semibold">The Blinds Company</span>.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 text-xs text-navy-800/70 font-mono">
+              *Expanding into allied home service and contractor trades. Inquire during consultation.
             </div>
           </div>
         </ScrollReveal>
       </section>
 
-      {/* 4. SEAMLESS MIGRATION SECTION */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 4. READY TO ELEVATE CTA */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <ScrollReveal direction="up">
-          <div className="glass-card-dark rounded-2xl p-8 sm:p-12 border border-sage-300/20 text-center relative overflow-hidden">
-            <div className="max-w-3xl mx-auto space-y-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-900 border border-sage-300/20 text-xs font-mono text-sage-300">
-                <Repeat size={14} className="text-cognac-500" />
-                <span>SWITCHING FROM GOHIGHLEVEL, HUBSPOT, OR ACTIVECAMPAIGN?</span>
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-cream-100">
-                Concierge 1-Click Data Migration
+          <div className="glass-card-dark rounded-3xl p-8 sm:p-12 border border-sage-300/20 shadow-2xl text-center text-cream-100 relative overflow-hidden">
+            <div className="relative z-10 space-y-5 max-w-2xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                Get Your Customized Campaign Breakdown
               </h2>
-
               <p className="text-sage-300 text-sm sm:text-base leading-relaxed">
-                Migrate your contacts, pipeline history, email templates, and active workflows with zero downtime.
-                Our migration team handles data cleansing and field mapping for you free of charge.
+                Schedule a 15-minute online consultation with our team. We’ll show you our active campaigns, discuss your target service area, and tailor the exact services for your business.
               </p>
-
-              <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
-                <div className="flex items-center gap-2 text-xs font-mono text-cream-100 bg-navy-900 px-3.5 py-2 rounded-xl border border-sage-300/20">
-                  <FileCheck size={14} className="text-emerald-400" /> Complete Contact & Tag Preserved
-                </div>
-                <div className="flex items-center gap-2 text-xs font-mono text-cream-100 bg-navy-900 px-3.5 py-2 rounded-xl border border-sage-300/20">
-                  <FileCheck size={14} className="text-emerald-400" /> Workflow & Trigger Replication
-                </div>
-                <div className="flex items-center gap-2 text-xs font-mono text-cream-100 bg-navy-900 px-3.5 py-2 rounded-xl border border-sage-300/20">
-                  <FileCheck size={14} className="text-emerald-400" /> Zero Interruption to Active Campaigns
-                </div>
-              </div>
-
-              <div className="pt-4">
+              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
-                  to="/plans-discounts"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-cognac-500 hover:bg-cognac-600 text-white font-bold text-sm rounded-xl transition-all shadow-md active:scale-95"
+                  to="/contact"
+                  className="w-full sm:w-auto px-8 py-4 bg-cognac-500 hover:bg-cognac-600 text-white font-bold text-base rounded-xl active:scale-95 transition-all shadow-cognac-glow flex items-center justify-center gap-2"
                 >
-                  <span>Claim $500 Migration Credit</span>
-                  <ArrowRight size={16} />
+                  <Calendar size={18} />
+                  <span>Book Consultation</span>
                 </Link>
+                <a
+                  href="tel:18005550199"
+                  className="w-full sm:w-auto px-8 py-4 glass-card text-navy-900 font-bold text-base rounded-xl hover:bg-cream-100 transition-all flex items-center justify-center gap-2"
+                >
+                  <PhoneCall size={18} className="text-cognac-500" />
+                  <span>Call (800) 555-LEAD</span>
+                </a>
               </div>
             </div>
           </div>

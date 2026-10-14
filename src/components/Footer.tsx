@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { KodiakLogo, KodiakBearIcon } from './KodiakLogo';
-import { Shield, ArrowUpRight, Activity } from 'lucide-react';
+import { ArrowUpRight, Activity, PhoneCall } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -12,36 +12,37 @@ export const Footer: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-12 border-b border-sage-300/15">
-          {/* Brand Info with Bear Logo Placeholder */}
+          {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <KodiakLogo iconSize={44} inverted={true} />
             <p className="text-sage-300/80 text-sm leading-relaxed max-w-sm mt-3">
-              The apex business operating system engineered for growth-driven marketing agencies,
-              scaling enterprises, and modern revenue teams. Automate lead capture, qualification,
-              and closing with ruthless efficiency.
+              Lead Kodiak is a Software & Marketing Firm built specifically for home service contractors and window covering specialists. We engineer automated lead pipelines, high-converting websites, and centralized mobile inboxes that keep your business booked year-round.
             </p>
 
-            {/* Status Pill per DESIGN.md */}
+            {/* Status Pill */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sage-300 text-navy-800 text-xs font-semibold shadow-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
               </span>
-              <span>Kodiak Cluster: 99.99% Uptime</span>
+              <span>Available 24/7 • Operating in all 50 states 🇺🇸</span>
             </div>
 
-            <div className="flex items-center gap-3 pt-2">
-              <div className="flex items-center gap-1.5 text-xs font-mono text-sage-300/70 bg-navy-900/80 px-3 py-1.5 rounded-lg border border-sage-300/20">
-                <Shield size={14} className="text-cognac-500" />
-                <span>SOC-2 & HIPAA Ready Architecture</span>
-              </div>
+            <div className="pt-2 flex items-center gap-3">
+              <a
+                href="tel:18005550199"
+                className="inline-flex items-center gap-2 text-xs font-mono text-cream-100 hover:text-cognac-400 transition-colors bg-navy-900/80 px-3 py-1.5 rounded-lg border border-sage-300/20"
+              >
+                <PhoneCall size={14} className="text-cognac-500" />
+                <span>Call Us: (800) 555-LEAD</span>
+              </a>
             </div>
           </div>
 
           {/* Primary Navigation */}
           <div>
             <h3 className="text-xs font-mono uppercase tracking-widest text-cognac-500 font-bold mb-4">
-              Platform
+              Navigation
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
@@ -115,29 +116,29 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Infrastructure & Telemetry Snapshot */}
+          {/* Operational Metrics Snapshot */}
           <div>
             <h3 className="text-xs font-mono uppercase tracking-widest text-cognac-500 font-bold mb-4">
-              Telemetry
+              Operational Proof
             </h3>
             <div className="bg-navy-900/90 rounded-xl p-3.5 border border-sage-300/15 space-y-2 font-mono text-xs">
               <div className="flex justify-between text-sage-300/70">
-                <span>Avg Speed-To-Lead</span>
-                <span className="text-cognac-500 font-bold">18.4s</span>
+                <span>Speed-To-Lead</span>
+                <span className="text-cognac-500 font-bold">&lt; 30 Seconds</span>
               </div>
               <div className="flex justify-between text-sage-300/70">
-                <span>Daily API Calls</span>
-                <span className="text-cream-100 font-bold">42.8M</span>
+                <span>Google Rating</span>
+                <span className="text-amber-400 font-bold">5.0 ★★★★★</span>
               </div>
               <div className="flex justify-between text-sage-300/70">
-                <span>Reseller Margins</span>
-                <span className="text-emerald-400 font-bold">+82% Avg</span>
+                <span>Contracts</span>
+                <span className="text-emerald-400 font-bold">Month-to-Month</span>
               </div>
               <div className="pt-2 border-t border-sage-300/10 flex items-center justify-between text-[11px] text-sage-300/60">
                 <span className="flex items-center gap-1">
-                  <Activity size={12} className="text-emerald-400" /> Core Cluster
+                  <Activity size={12} className="text-emerald-400" /> Sister Brand
                 </span>
-                <span className="text-cream-100/80">v4.8.2-prod</span>
+                <span className="text-cream-100/80">The Blinds Co.</span>
               </div>
             </div>
           </div>
@@ -147,12 +148,12 @@ export const Footer: React.FC = () => {
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-sage-300/70">
           <div className="flex items-center gap-2">
             <KodiakBearIcon size={18} inverted={true} />
-            <span>&copy; {new Date().getFullYear()} Lead Kodiak Technologies Inc. All rights reserved.</span>
+            <span>&copy; {new Date().getFullYear()} Lead Kodiak. All rights reserved.</span>
           </div>
           <div className="flex items-center gap-6">
-            <span className="hover:text-cream-100 cursor-pointer">Security Safeguards</span>
-            <span className="hover:text-cream-100 cursor-pointer">Privacy Framework</span>
-            <span className="hover:text-cream-100 cursor-pointer">Platform Terms</span>
+            <Link to="/about" className="hover:text-cream-100">About Our Story</Link>
+            <Link to="/faq" className="hover:text-cream-100">FAQ</Link>
+            <Link to="/contact" className="hover:text-cream-100">Book Consultation</Link>
           </div>
         </div>
       </div>
