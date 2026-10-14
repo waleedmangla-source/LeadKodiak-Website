@@ -88,7 +88,7 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ compact = false })
               <Sparkles size={12} /> Color Palettes
             </span>
             <span className="text-[10px] font-mono text-navy-800/60">
-              6 Curated Themes
+              {themes.length} Curated Themes
             </span>
           </div>
 

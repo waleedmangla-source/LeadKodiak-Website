@@ -114,6 +114,24 @@
   --color-cognac-600: 134 23 23;
 }
 
+/* Palette 6: https://colorhunt.co/palette/2c3333395b64a5c9cae7f6f2 */
+[data-theme="glacier-teal"] {
+  --color-navy-900: 26 32 32;
+  --color-navy-800: 44 51 51;
+  --color-navy-700: 57 91 100;
+
+  --color-cream-100: 231 246 242;
+  --color-cream-200: 210 237 231;
+
+  --color-sage-300: 165 201 202;
+  --color-sage-400: 129 177 179;
+  --color-sage-500: 95 150 152;
+
+  --color-cognac-400: 72 114 125;
+  --color-cognac-500: 57 91 100;
+  --color-cognac-600: 43 71 78;
+}
+
 /* =========================================================================
    BODY & AMBIENT CANVAS BACKDROP
    ========================================================================= */

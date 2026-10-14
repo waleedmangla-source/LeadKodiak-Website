@@ -50,6 +50,13 @@ export const THEMES: ThemeOption[] = [
     swatches: ['#6C1A1A', '#31AAA9', '#F8E0A4', '#A82020'],
     colorHuntUrl: 'https://colorhunt.co/palette/31aaa9f8e0a4a820206c1a1a',
   },
+  {
+    id: 'glacier-teal',
+    name: 'Glacier & Deep Sea',
+    subtitle: 'Charcoal & Aqua Ice',
+    swatches: ['#2C3333', '#A5C9CA', '#E7F6F2', '#395B64'],
+    colorHuntUrl: 'https://colorhunt.co/palette/2c3333395b64a5c9cae7f6f2',
+  },
 ];
 
 interface ThemeContextType {
