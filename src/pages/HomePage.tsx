@@ -109,11 +109,8 @@ export const HomePage: React.FC = () => {
 
           {/* Main User Catchphrase */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-navy-900 tracking-tight leading-[1.08] max-w-5xl mx-auto">
-            🚀 Your Success Starts With{' '}
-            <span className="relative inline-block text-cognac-500 underline decoration-sage-400 decoration-wavy decoration-2">
-              More Leads
-            </span>{' '}
-            🐻🇺🇸
+            Your Success Starts With{' '}
+            <span className="text-cognac-500">More Leads</span>
           </h1>
         </ScrollReveal>
 
