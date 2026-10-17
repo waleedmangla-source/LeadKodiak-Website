@@ -135,13 +135,6 @@ export const HomePage: React.FC = () => {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal direction="up" delay={250}>
-          <p className="mt-6 text-lg sm:text-xl text-navy-800/80 max-w-3xl mx-auto leading-relaxed">
-            Stop grinding through cold outreach and unpredictable months. We construct
-            battle-tested automated lead generation pipelines, high-converting websites,
-            and centralized mobile inboxes that keep your company booked year-round.
-          </p>
-        </ScrollReveal>
 
         {/* Hero Action Buttons */}
         <ScrollReveal direction="up" delay={350}>
