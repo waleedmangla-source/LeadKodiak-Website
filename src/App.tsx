@@ -33,6 +33,8 @@ export const App: React.FC = () => {
             <Route path="/about" element={<AboutUsPage />} />
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/contact" element={<ContactUsPage />} />
+            <Route path="/book" element={<ContactUsPage />} />
+            <Route path="/freequote" element={<ContactUsPage />} />
 
             {/* Fallback */}
             <Route path="*" element={<Navigate to="/" replace />} />
