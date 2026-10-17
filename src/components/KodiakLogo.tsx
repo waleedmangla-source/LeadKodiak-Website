@@ -51,14 +51,14 @@ export const KodiakLogo: React.FC<KodiakLogoProps> = ({
               inverted ? 'text-cream-100' : 'text-navy-800'
             }`}
           >
-            LEAD <span className="text-cognac-500">KODIAK</span>
+            Lead <span className="text-cognac-500">Kodiak</span>
           </span>
           <span
-            className={`font-mono text-[9px] font-semibold tracking-widest uppercase mt-0.5 ${
-              inverted ? 'text-sage-300' : 'text-navy-900/60'
+            className={`font-mono text-[9px] font-semibold tracking-wider mt-0.5 ${
+              inverted ? 'text-sage-300' : 'text-navy-900/70'
             }`}
           >
-            LEAD INTELLIGENCE OS
+            Software &amp; Marketing Firm
           </span>
         </div>
       )}
