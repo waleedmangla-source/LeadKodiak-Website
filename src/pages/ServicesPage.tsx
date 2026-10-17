@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ScrollReveal } from '../components/ScrollReveal';
-import { KodiakBearIcon } from '../components/KodiakLogo';
 import {
   Layout,
   Smartphone,
@@ -19,13 +18,6 @@ export const ServicesPage: React.FC = () => {
       {/* 1. HERO HEADER */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center pt-8 md:pt-14">
         <ScrollReveal direction="up">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sage-300 text-navy-800 text-xs sm:text-sm font-semibold shadow-sm mb-6 border border-sage-400/50">
-            <KodiakBearIcon size={15} />
-            <span className="font-mono tracking-wider uppercase">
-              LEAD KODIAK • CORE SERVICES
-            </span>
-          </div>
-
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-navy-900 tracking-tight leading-tight max-w-4xl mx-auto">
             In Short, Our{' '}
             <span className="text-cognac-500">Main Services</span>.
